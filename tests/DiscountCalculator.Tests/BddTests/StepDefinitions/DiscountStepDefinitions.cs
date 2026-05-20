@@ -1,6 +1,7 @@
 using DiscountCalculator.Core.Enums;
 using DiscountCalculator.Tests.Fakes;
 using Reqnroll;
+using Xunit;
 
 namespace DiscountCalculator.Tests.BddTests.StepDefinitions;
 
@@ -12,7 +13,7 @@ public class DiscountStepDefinitions
     private decimal _result;
     private Exception? _exception;
     private Season _season;
-    
+
     [Given("a {string} customer")]
     public void GivenACustomer(string customerType)
     {
@@ -45,14 +46,13 @@ public class DiscountStepDefinitions
     [Then("the discount should be {decimal}")]
     public void ThenTheDiscountShouldBe(decimal expected)
     {
-        Assert.That(_result, Is.EqualTo(expected));
+        Assert.Equal(expected, _result);
     }
 
     [Then("an exception should be thrown")]
     public void ThenAnExceptionShouldBeThrown()
     {
-        Assert.That(_exception, Is.Not.Null);
-        Assert.That(_exception, Is.InstanceOf<ArgumentException>());
+        Assert.NotNull(_exception);
+        Assert.IsType<ArgumentException>(_exception);
     }
-
 }
