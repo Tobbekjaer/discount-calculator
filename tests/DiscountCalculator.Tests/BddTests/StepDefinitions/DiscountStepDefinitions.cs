@@ -15,13 +15,13 @@ public class DiscountStepDefinitions
     private Exception? _exception;
     private Season _season;
 
-    [Given("a {string} customer")]
+    [Given("a {word} customer")]
     public void GivenACustomer(string customerType)
     {
         _customerType = Enum.Parse<CustomerType>(customerType);
     }
 
-    [Given("the current season is {string}")]
+    [Given("the current season is {word}")]
     public void GivenTheCurrentSeasonIs(string season)
     {
         _season = Enum.Parse<Season>(season);
