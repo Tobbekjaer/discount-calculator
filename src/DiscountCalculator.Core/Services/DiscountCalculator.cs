@@ -24,15 +24,14 @@ public class DiscountCalculator
         if (customerType == CustomerType.Standard)
         {
             if (orderAmount < 100) return 0m;
-            if (orderAmount < 500) return isPeakSeason ? 10m : 5m;
-            return isPeakSeason ? 15m : 10m; 
+            if (orderAmount <= 500) return isPeakSeason ? 10m : 5m;
+            return isPeakSeason ? 15m : 10m;
         }
         else // Premium
         {
             if (orderAmount < 100) return 5m;
-            if (orderAmount < 500) return isPeakSeason ? 20m : 15m;
+            if (orderAmount <= 500) return isPeakSeason ? 20m : 15m;
             return isPeakSeason ? 25m : 20m;
         }
-        
     }
 }
