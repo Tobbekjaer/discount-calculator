@@ -1,22 +1,20 @@
 # Discount Calculator
 
-A C# project demonstrating a practical testing strategy for a discount calculation system. Built as part of a Software Quality exam, the project covers **Design for Testability**, **Black Box Testing** (Equivalence Class, Boundary Value, and Decision Table Testing), and **BDD with Cucumber**.
+A C# project demonstrating a practical testing strategy for a discount calculation system. Built as part of a Software Quality exam, the project covers **Design for Testability**, **Black Box Testing** (Equivalence Class, Boundary Value, and Decision Table Testing), **White Box Testing** (DD-path graph and Cyclomatic Complexity), and **BDD with Cucumber**.
 
 ## Project Structure
 
 ```
 DiscountCalculator/
-├── src/
-│   └── DiscountCalculator.Core/
-│       ├── Enums/           # CustomerType, Season
-│       ├── Interfaces/      # IDateService
-│       ├── Services/        # DiscountCalculator
-│       └── Infrastructure/  # SystemDateService
-└── tests/
-    └── DiscountCalculator.Tests/
-        ├── Fakes/           # FakeDateService
-        ├── BddTests/        # Gherkin feature files and step definitions
-        └── UnitTests/       # xUnit unit tests
+├── src/DiscountCalculator.Core/
+│   ├── Enums/           # CustomerType, Season
+│   ├── Interfaces/      # IDateService
+│   ├── Services/        # DiscountCalculator
+│   └── Infrastructure/  # SystemDateService
+└── tests/DiscountCalculator.Tests/
+    ├── Fakes/           # FakeDateService
+    ├── BddTests/        # Gherkin feature files and step definitions
+    └── UnitTests/       # xUnit unit tests
 ```
 
 ## Requirements
@@ -39,7 +37,7 @@ dotnet restore
 dotnet test
 ```
 
-This runs all 24 tests - 12 BDD scenarios and 12 unit tests.
+This runs all 24 tests - 12 BDD scenarios and 12 unit tests covering all 7 independent code paths.
 
 ## Tech Stack
 
